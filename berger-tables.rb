@@ -15,8 +15,12 @@ class Tournament
 
 	attr_accessor		:rounds, :n, :t, :m, :is_odd
 
-	def initialize(n = 8)
-		if n.odd?			
+	def initialize(n = ARGV[0])
+		if ARGV.empty?
+			n = 8
+		end
+		n = n.to_i
+		if n.odd?
 			@n = n + 1
 			@is_odd = true
 		else
@@ -130,7 +134,7 @@ class Tournament
 		y = @rounds[0].size
 		x.times do |a_x|		
 			@rounds[a_x].each do |game|
-				print game, "\t\t"
+				print game, "\t"
 			end
 			print "\n"
 		end
