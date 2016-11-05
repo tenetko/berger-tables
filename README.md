@@ -9,7 +9,7 @@ The brief description: https://en.wikipedia.org/wiki/Round-robin_tournament
 To calculate a tournament table for 10 participants:
 
 ```sh
-ruby berger-tables.rb 10
+$ ruby berger-tables.rb 10
 ```
 
 Running the program without an argument calculates the table for 8 participants.
