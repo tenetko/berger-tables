@@ -15,10 +15,7 @@ class Tournament
 
 	attr_accessor		:rounds, :n, :t, :m, :is_odd
 
-	def initialize(n = ARGV[0])
-		if ARGV.empty?
-			n = 8
-		end
+	def initialize(n)
 		n = n.to_i
 		if n.odd?
 			@n = n + 1
@@ -142,7 +139,12 @@ class Tournament
 end
 
 def run
-	t = Tournament.new
+	if ARGV.empty?
+		n = 8
+	else
+		n = ARGV[0]
+	end
+	t = Tournament.new(n)
 	t.make_first_row
 	t.make_other_rows
 	t.display_array
